@@ -1,0 +1,71 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>Noticias</title>
+	<link href="{% static "style.css"%}" type=text/css rel=stylesheet> 
+	<link href="styles/style.css" type="text/css" rel="stylesheet"/>
+	<link href="{% static "styles/jflow.style.css"%}" type="text/css" rel="stylesheet"/>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+	<script src="{% static "jflow.plus.min.js"%}" type="text/javascript"></script>
+	<script type="text/javascript"></script>
+
+</head>
+<body>
+    
+	<center>
+            
+		<div id ="cabecera">
+				<img src="{% static "img/imagen_3.png"%}" height="80%"  hspace="9%" vspace=".3%">
+	
+		</div>
+		</center>
+                 
+		<div id='cssmenu'>
+		<ul>
+		   <li class='has-sub'><a href='#'><span>Inicio</span></a>
+			  <ul>
+				 <li><a href='QuejaUsu.html'><span>Quejas y Sugerencias</span></a></li>
+				 <li class='last'><a href='CerrarSesion'><span>Salir</span></a></li>
+			  </ul>
+		   </li>
+		   <li class='has-sub'><a href='#'><span>Miembro</span></a>
+			  <ul>
+				 <li><a href='Perfil.jsp'><span>Perfil</span></a></li>
+				 <li><a href='Amigos.jsp'><span>Amigos</span></a></li>
+				 <li class='last'><a href='Config.jsp'><span>Configuraci&oacute;n</span></a></li>
+			  </ul>
+		   </li>
+		   <li><a href='PublicacionesUs.jsp'><span>Noticias</span></a></li>
+		   <li class='last'><a href='Grupos.jsp'><span>Grupos</span></a></li>
+		</ul>
+		</div>
+			
+				
+		<br>
+		<br>
+		<center>
+                    <div id="bienvenido" align="center">
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+		 <h1 id="titulo">Bienvenido</h1>
+                 <br>
+                 <h1 id="titulo"></h1>
+                 
+		</div>
+
+		<div id="noticias">
+			{% for publicacion in publicaciones %}
+
+			{% endfor %}
+		</div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    
+		</center>
+</body>
+</html>

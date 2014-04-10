@@ -1,0 +1,118 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>Inicio</title>
+	<link href="{% static "style.css"%}" type=text/css rel=stylesheet> 
+	<link href="styles/style.css" type="text/css" rel="stylesheet"/>
+	<link href="{% static "styles/jflow.style.css"%}" type="text/css" rel="stylesheet"/>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+	<script src="{% static "jflow.plus.min.js"%}" type="text/javascript"></script>
+	<script type="text/javascript">
+
+        $(function () {
+
+            $("#myController").jFlow({
+
+                controller: ".jFlowControl", // must be class, use . sign
+
+                slideWrapper: "#jFlowSlider", // must be id, use # sign
+
+                slides: "#mySlides",  // the div where all your sliding divs are nested in
+
+                selectedWrapper: "jFlowSelected",  // just pure text, no sign
+
+                effect: "flow", //this is the slide effect (rewind or flow)
+
+                width: "550px",  // this is the width for the content-slider
+
+                height: "300px",  // this is the height for the content-slider
+
+                duration: 400,  // time in milliseconds to transition one slide
+
+                pause: 5000, //time between transitions
+
+                prev: ".jFlowPrev", // must be class, use . sign
+
+                next: ".jFlowNext", // must be class, use . sign
+
+                auto: true
+
+            });
+
+        });
+
+    </script>
+</head>
+<body>
+	<center>
+		<div id ="cabecera">
+				<img src="{% static "img/imagen_3.png"%}" height="80%"  hspace="9%" vspace=".3%">
+	
+		</div>
+		</center>
+				
+		<br>
+		<div id ="izquierda">
+				<div id="registro">
+				<br>
+				<br>
+				<br>
+				<h1>Ingresa</h1>
+				<center>
+				<br>
+				<br>
+					<div id="formu">
+						<form id="login_form" action="login/" method="POST">
+							{% csrf_token %}
+							Ingresa tu usuario: <input name="usuario" type="text" value="" /><br>
+							Ingresa tu password: <input name="password" type="password" value="" />
+							<center><input class="botonenviar" name="insert"  type="submit" value="Enviar" class="enviar"/> </center>
+						</form>
+					</div>
+				</center>
+				</div>
+		</div>
+<div id ="derecha">
+		
+			<div id="container">
+		<div id="header">
+
+			<!-- /#headerSocials -->
+		</div>
+		<!-- /#header -->
+
+		<div id="sliderContainer">
+			<div id="mySlides">
+				<div id="slide1" class="slide"><img src="{% static "img/img1.jpg"%}" alt="Slide 1 jFlow Plus"/>
+
+				</div>
+				<div id="slide2" class="slide"><img src="{% static "img/img2.jpg"%}" alt="Slide 2 jFlow Plus"/>
+
+				</div>
+				<div id="slide3" class="slide"><img src="{% static "img/img3.jpg"%}" alt="Slide 3 jFlow Plus"/>
+
+
+				</div>
+				<div id="slide4" class="slide"><img src="{% static "img/img4.jpg"%}" alt="Slide 3 jFlow Plus"/>
+
+
+				</div>
+			</div>
+			<div id="myController">
+				<span class="jFlowControl"></span> <span class="jFlowControl"></span> <span class="jFlowControl"></span>
+				<span class="jFlowControl"></span>
+			</div>
+			<div class="jFlowPrev"></div>
+			<div class="jFlowNext"></div>
+		</div>
+
+	</div>
+	<!--end: container -->
+</div>
+</body>
+</html>
